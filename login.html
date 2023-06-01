@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login Form</title>
+    <link rel="stylesheet" href="CSS\signup.css">
+    <link href="logo and gif\form.jpg" rel="icon" type="image/jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="main">
+      <!--create the form-->
+      <form action="web.html" method="POST" class="form" id="form-1">
+        <h3 class="heading">Login</h3>  
+        <div class="spacer"></div>
+
+        <!--email-->
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input 
+            id="email"
+            name="email"
+            type="text"
+            placeholder="VD: email@domain.com"
+            class="form-control"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <!--password-->
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input 
+            id="password"
+            name="password"
+            type="password"
+            placeholder="enter your password"
+            class="form-control"
+          />
+        <div class="form-group">
+          <span class="form-message"></span>
+        </div>
+
+        <!--create the captcha-->
+        <div class="captcha">
+          <div class="spinner">
+            <label>
+              <!--link to game-->
+              <input type="checkbox" onclick="window.location.href='game.html'; $(this).attr('disabled','disabled'); ">
+              <span class="checkmark"><span>&nbsp;</span></span>
+            </label>
+          </div>
+          <div class="text">
+            I'm not a robot
+          </div>
+          <div class="logo">
+            <img src="https://forum.nox.tv/core/index.php?media/9-recaptcha-png/"/>
+            <p>reCAPTCHA</p>
+            <small>Privacy - Terms</small>
+          </div>
+        </div>
+
+        <!--submit button-->
+        <button class="submit" id="signup-button"><a href="web.html">Login</a></button>
+        <br><br>
+        <p><strong> Don't have an account? &nbsp;<a href="signup.html" style="color:blue">Signup</a> </strong></p>
+        <p><span class="btn-round">or</span></p>
+
+        <!--social login button submit-->
+        <div class="social-logins">
+          <div class="facebook-login login-button">
+            <i class="fa fa-facebook">&nbsp;&nbsp;&nbsp;</i><span >Login with Facebook</span>
+          </div>
+          <div class="google-login login-button">
+            <i class="fa fa-google">&nbsp;&nbsp;&nbsp;</i><span>Login with Google</span>
+          </div>
+        </div>
+      </form>
+    <!--end gỉrd-->
+    </div>
+  </body>
+
+<!--link to login javascript-->
+  <script src="Javascript\signup.js"></script>
+    <script>
+      validator({
+        form: "#form-1",
+        rules: [
+          validator.isRequired("#fullname"),
+          validator.isEmail("#email"),
+          validator.isPass("#password", 6),
+          validator.isSamePass("#password_confirmation", function() {
+            return document.querySelector("#password").value;
+          })
+        ]
+      });
+    </script>
+</html>
+ 

@@ -1,0 +1,342 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background: linear-gradient(purple, rgba(127,0,173,0.6)),
+    url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/31787/stars.jpg);  
+  }
+  
+  /* Head board*/
+  .head {
+    max-width: 480px;
+    border: 2px solid #a6a6a6;
+    margin: auto;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Orbitron", sans-serif;
+    background: radial-gradient(ellipse at center, rgba(127,0,173,0.6) 0%,
+  rgba(0,0,0,0.8) 60%, 
+  rgba(0,0,0,1) 90%), 
+  url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/31787/stars.jpg);
+  }
+  
+  h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 200%;
+    color:white;
+  }
+
+  .score{
+    background: yellow;
+    padding: 10px 30px;
+    border-radius: 20px;
+  }
+
+  /* create the cards with columns and rows */
+  .container {
+    max-width: 1500px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
+    margin: auto;
+    padding: 15px;
+  }
+  
+  .cell div {
+    height: 130px;
+    border-radius: 4px;
+  }
+  
+  .cell {
+    position: relative;
+    cursor: pointer;
+  }
+  .cell:hover{
+    transform: scale(1.05);
+  transition: transform 0.25s ease-in-out;
+  }
+  
+  .front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #a6a6a6;
+    background-color: #f2f2f2;
+    transform: rotateY(90deg);
+  }
+  
+  .back {
+    background-color: black;
+  }
+  
+  img {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .flip {
+    transform: rotateY(0deg);
+  }
+  .match {
+    transform: rotateY(0deg);
+  }
+  
+  .show {
+    transform: rotateY(0deg);
+  }
+  
+  /*make the responsive for mobile and laptop*/
+  @media screen and (min-width: 770px) {
+    .head {
+      max-width: 920px;
+    }
+  
+    .container {
+      grid-template-columns: repeat(6, auto);
+    }
+  
+    .cell div {
+      height: 170px;
+    }
+  }
+
+  /*create the congrats screen css*/
+  .congrats {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #000;
+  }
+  
+  .congrats h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .congrats p {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .congrats button {
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /*create losing screen css*/
+  .losing-screen {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #000;
+  }
+  
+  .losing-screen h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .losing-screen p {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .losing-screen button {
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /*Create rating star for the game css */
+  :root {
+    --bg: #e3e4e8;
+    --fg: #17181c;
+    --primary: #255ff4;
+    --yellow: #f4a825;
+    --yellow-t: rgba(244, 168, 37, 0);
+    --bezier: cubic-bezier(0.42, 0, 0.58, 1);
+    --trans-dur: 0.3s;
+  }
+  
+  .rating__display {
+    color:#f4a825;
+    font-size: 200%; 
+    top: 100%;
+    width: 100%;
+    float: left;
+  }
+  .rating__stars {
+    display: flex;
+    position: relative;
+  }
+  .rating__star {
+    color:yellow;
+    width: 2em;
+    height: 2em;
+  }
+  .rating__star-ring, .rating__star-fill, .rating__star-line, .rating__star-stroke {
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  .rating__star-ring, .rating__star-fill, .rating__star-line {
+    stroke: var(--yellow);
+  }
+  .rating__star-fill {
+    fill: var(--yellow);
+    transform: scale(0);
+    transition: fill var(--trans-dur) var(--bezier), transform var(--trans-dur) var(--bezier);
+  }
+  .rating__star-stroke {
+    stroke: #c7cad1;
+    transition: stroke var(--trans-dur);
+  }
+  .rating__label {
+    cursor: pointer;
+    padding: 0.125em;
+  }
+  .rating__label--delay1 .rating__star-ring, .rating__label--delay1 .rating__star-fill, .rating__label--delay1 .rating__star-line, .rating__label--delay1 .rating__star-stroke {
+    animation-delay: 0.05s;
+  }
+  .rating__label--delay2 .rating__star-ring, .rating__label--delay2 .rating__star-fill, .rating__label--delay2 .rating__star-line, .rating__label--delay2 .rating__star-stroke {
+    animation-delay: 0.1s;
+  }
+  .rating__label--delay3 .rating__star-ring, .rating__label--delay3 .rating__star-fill, .rating__label--delay3 .rating__star-line, .rating__label--delay3 .rating__star-stroke {
+    animation-delay: 0.15s;
+  }
+  .rating__label--delay4 .rating__star-ring, .rating__label--delay4 .rating__star-fill, .rating__label--delay4 .rating__star-line, .rating__label--delay4 .rating__star-stroke {
+    animation-delay: 0.2s;
+  }
+  .rating__input {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .rating__input:hover ~ [data-rating]:not([hidden]) {
+    display: none;
+  }
+  .rating__input-1:hover ~ [data-rating="1"][hidden], .rating__input-2:hover ~ [data-rating="2"][hidden], .rating__input-3:hover ~ [data-rating="3"][hidden], .rating__input-4:hover ~ [data-rating="4"][hidden], .rating__input-5:hover ~ [data-rating="5"][hidden], .rating__input:checked:hover ~ [data-rating]:not([hidden]) {
+    display: block;
+  }
+  .rating__input-1:hover ~ .rating__label:first-of-type .rating__star-stroke, .rating__input-2:hover ~ .rating__label:nth-of-type(-n + 2) .rating__star-stroke, .rating__input-3:hover ~ .rating__label:nth-of-type(-n + 3) .rating__star-stroke, .rating__input-4:hover ~ .rating__label:nth-of-type(-n + 4) .rating__star-stroke, .rating__input-5:hover ~ .rating__label:nth-of-type(-n + 5) .rating__star-stroke {
+    stroke: var(--yellow);
+    transform: scale(1);
+  }
+  .rating__input-1:checked ~ .rating__label:first-of-type .rating__star-ring, .rating__input-2:checked ~ .rating__label:nth-of-type(-n + 2) .rating__star-ring, .rating__input-3:checked ~ .rating__label:nth-of-type(-n + 3) .rating__star-ring, .rating__input-4:checked ~ .rating__label:nth-of-type(-n + 4) .rating__star-ring, .rating__input-5:checked ~ .rating__label:nth-of-type(-n + 5) .rating__star-ring {
+    animation-name: starRing;
+  }
+  .rating__input-1:checked ~ .rating__label:first-of-type .rating__star-stroke, .rating__input-2:checked ~ .rating__label:nth-of-type(-n + 2) .rating__star-stroke, .rating__input-3:checked ~ .rating__label:nth-of-type(-n + 3) .rating__star-stroke, .rating__input-4:checked ~ .rating__label:nth-of-type(-n + 4) .rating__star-stroke, .rating__input-5:checked ~ .rating__label:nth-of-type(-n + 5) .rating__star-stroke {
+    animation-name: starStroke;
+  }
+  .rating__input-1:checked ~ .rating__label:first-of-type .rating__star-line, .rating__input-2:checked ~ .rating__label:nth-of-type(-n + 2) .rating__star-line, .rating__input-3:checked ~ .rating__label:nth-of-type(-n + 3) .rating__star-line, .rating__input-4:checked ~ .rating__label:nth-of-type(-n + 4) .rating__star-line, .rating__input-5:checked ~ .rating__label:nth-of-type(-n + 5) .rating__star-line {
+    animation-name: starLine;
+  }
+  .rating__input-1:checked ~ .rating__label:first-of-type .rating__star-fill, .rating__input-2:checked ~ .rating__label:nth-of-type(-n + 2) .rating__star-fill, .rating__input-3:checked ~ .rating__label:nth-of-type(-n + 3) .rating__star-fill, .rating__input-4:checked ~ .rating__label:nth-of-type(-n + 4) .rating__star-fill, .rating__input-5:checked ~ .rating__label:nth-of-type(-n + 5) .rating__star-fill {
+    animation-name: starFill;
+  }
+  .rating__input-1:not(:checked):hover ~ .rating__label:first-of-type .rating__star-fill, .rating__input-2:not(:checked):hover ~ .rating__label:nth-of-type(2) .rating__star-fill, .rating__input-3:not(:checked):hover ~ .rating__label:nth-of-type(3) .rating__star-fill, .rating__input-4:not(:checked):hover ~ .rating__label:nth-of-type(4) .rating__star-fill, .rating__input-5:not(:checked):hover ~ .rating__label:nth-of-type(5) .rating__star-fill {
+    fill: var(--yellow-t);
+  }
+  .rating__sr {
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17181c;
+      --fg: #e3e4e8;
+    }
+  
+    .rating {
+      margin: auto;
+    }
+    .rating__star-stroke {
+      stroke: #454954;
+    }
+  }
+  @keyframes starRing {
+    from, 20% {
+      animation-timing-function: ease-in;
+      opacity: 1;
+      r: 8px;
+      stroke-width: 16px;
+      transform: scale(0);
+    }
+    35% {
+      animation-timing-function: ease-out;
+      opacity: 0.5;
+      r: 8px;
+      stroke-width: 16px;
+      transform: scale(1);
+    }
+    50%, to {
+      opacity: 0;
+      r: 16px;
+      stroke-width: 0;
+      transform: scale(1);
+    }
+  }
+  @keyframes starFill {
+    from, 40% {
+      animation-timing-function: ease-out;
+      transform: scale(0);
+    }
+    60% {
+      animation-timing-function: ease-in-out;
+      transform: scale(1.2);
+    }
+    80% {
+      transform: scale(0.9);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  @keyframes starStroke {
+    from {
+      transform: scale(1);
+    }
+    20%, to {
+      transform: scale(0);
+    }
+  }
+  @keyframes starLine {
+    from, 40% {
+      animation-timing-function: ease-out;
+      stroke-dasharray: 1 23;
+      stroke-dashoffset: 1;
+    }
+    60%, to {
+      stroke-dasharray: 12 12;
+      stroke-dashoffset: -12;
+    }
+  }

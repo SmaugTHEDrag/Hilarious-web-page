@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memmory Game</title>
+    <link rel="stylesheet" href="CSS\game.css">
+    <link rel="icon" href="logo and gif\form.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+<script defer src="Javascript\game.js"></script>
+</head>
+<body>
+    <!--create the head and the score board-->
+    <div class="head">
+        <h2 >Memmory Game</h2>
+        <div class="score">Score: <span>5</span></div>
+    </div>
+
+    <!--create the cards -->
+    <div class="container">
+        <div class="cell">
+            <div class="front" data-index="1"><img src="Game\1.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="1"><img src="Game\1.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="2"><img src="Game\2.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="2"><img src="Game\2.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="3"><img src="Game\3.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="3"><img src="Game\3.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="4"><img src="Game\4.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="4"><img src="Game\4.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="5"><img src="Game\5.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="5"><img src="Game\5.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="6"><img src="Game\6.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="6"><img src="Game\6.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="7"><img src="Game\7.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="7"><img src="Game\7.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="8"><img src="Game\8.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="8"><img src="Game\8.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="9"><img src="Game\9.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="9"><img src="Game\9.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="10"><img src="Game\10.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="10"><img src="Game\10.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="11"><img src="Game\11.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="11"><img src="Game\11.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="12"><img src="Game\12.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+        <div class="cell">
+            <div class="front" data-index="12"><img src="Game\12.jpg" alt=""></div>
+            <div class="back"></div>
+        </div>
+    </div>
+    
+    <!--add congrats screen-->
+    <div class="congrats">
+        <p style="font-size: 200%;">Congratulations! &#128525; &#128525; &#128525;</p>
+        <p style="font-size: 200%;">You have successfully completed the game.</p>
+        
+        <!--add star rating-->
+        <form class="rating">
+            <div class="rating__stars">
+                <input id="rating-1" class="rating__input rating__input-1" type="radio" name="rating" value="1">
+                <input id="rating-2" class="rating__input rating__input-2" type="radio" name="rating" value="2">
+                <input id="rating-3" class="rating__input rating__input-3" type="radio" name="rating" value="3">
+                <input id="rating-4" class="rating__input rating__input-4" type="radio" name="rating" value="4">
+                <input id="rating-5" class="rating__input rating__input-5" type="radio" name="rating" value="5">
+                <label class="rating__label" for="rating-1">
+                    <svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                        <g transform="translate(16,16)">
+                            <circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8" transform="scale(0)" />
+                        </g>
+                        <g stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <g transform="translate(16,16) rotate(180)">
+                                <polygon class="rating__star-stroke" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="none" />
+                                <polygon class="rating__star-fill" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="#000" />
+                            </g>
+                            <g transform="translate(16,16)" stroke-dasharray="12 12" stroke-dashoffset="12">
+                                <polyline class="rating__star-line" transform="rotate(0)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(72)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(144)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(216)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(288)" points="0 4,0 16" />
+                            </g>
+                        </g>
+                    </svg>
+                    <span class="rating__sr">1 star—Terrible</span>
+                </label>
+                <label class="rating__label" for="rating-2">
+                    <svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                        <g transform="translate(16,16)">
+                            <circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8" transform="scale(0)" />
+                        </g>
+                        <g stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <g transform="translate(16,16) rotate(180)">
+                                <polygon class="rating__star-stroke" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="none" />
+                                <polygon class="rating__star-fill" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="#000" />
+                            </g>
+                            <g transform="translate(16,16)" stroke-dasharray="12 12" stroke-dashoffset="12">
+                                <polyline class="rating__star-line" transform="rotate(0)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(72)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(144)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(216)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(288)" points="0 4,0 16" />
+                            </g>
+                        </g>
+                    </svg>
+                    <span class="rating__sr">2 stars—Bad</span>
+                </label>
+                <label class="rating__label" for="rating-3">
+                    <svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                        <g transform="translate(16,16)">
+                            <circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8" transform="scale(0)" />
+                        </g>
+                        <g stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <g transform="translate(16,16) rotate(180)">
+                                <polygon class="rating__star-stroke" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="none" />
+                                <polygon class="rating__star-fill" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="#000" />
+                            </g>
+                            <g transform="translate(16,16)" stroke-dasharray="12 12" stroke-dashoffset="12">
+                                <polyline class="rating__star-line" transform="rotate(0)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(72)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(144)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(216)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(288)" points="0 4,0 16" />
+                            </g>
+                        </g>
+                    </svg>
+                    <span class="rating__sr">3 stars—OK</span>
+                </label>
+                <label class="rating__label" for="rating-4">
+                    <svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                        <g transform="translate(16,16)">
+                            <circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8" transform="scale(0)" />
+                        </g>
+                        <g stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <g transform="translate(16,16) rotate(180)">
+                                <polygon class="rating__star-stroke" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="none" />
+                                <polygon class="rating__star-fill" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="#000" />
+                            </g>
+                            <g transform="translate(16,16)" stroke-dasharray="12 12" stroke-dashoffset="12">
+                                <polyline class="rating__star-line" transform="rotate(0)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(72)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(144)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(216)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(288)" points="0 4,0 16" />
+                            </g>
+                        </g>
+                    </svg>
+                    <span class="rating__sr">4 stars—Good</span>
+                </label>
+                <label class="rating__label" for="rating-5">
+                    <svg class="rating__star" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+                        <g transform="translate(16,16)">
+                            <circle class="rating__star-ring" fill="none" stroke="#000" stroke-width="16" r="8" transform="scale(0)" />
+                        </g>
+                        <g stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <g transform="translate(16,16) rotate(180)">
+                                <polygon class="rating__star-stroke" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="none" />
+                                <polygon class="rating__star-fill" points="0,15 4.41,6.07 14.27,4.64 7.13,-2.32 8.82,-12.14 0,-7.5 -8.82,-12.14 -7.13,-2.32 -14.27,4.64 -4.41,6.07" fill="#000" />
+                            </g>
+                            <g transform="translate(16,16)" stroke-dasharray="12 12" stroke-dashoffset="12">
+                                <polyline class="rating__star-line" transform="rotate(0)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(72)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(144)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(216)" points="0 4,0 16" />
+                                <polyline class="rating__star-line" transform="rotate(288)" points="0 4,0 16" />
+                            </g>
+                        </g>
+                    </svg>
+                    <span class="rating__sr">5 stars—Excellent</span>
+                </label>
+                <p class="rating__display" data-rating="1" hidden>Terrible</p>
+                <p class="rating__display" data-rating="2" hidden>Bad</p>
+                <p class="rating__display" data-rating="3" hidden>OK</p>
+                <p class="rating__display" data-rating="4" hidden>Good</p>
+                <p class="rating__display" data-rating="5" hidden>Excellent</p>
+            </div>
+        </form>
+        <button class="restart">Play Again</button>
+      </div>
+
+      <!--add losing screen-->
+      <div class="losing-screen">
+        <p style="font-size: 200%;"><b>&#128518;GAME OVER!!!&#128518;</b></p>
+        <p style="font-size: 200%;">You lose</p>
+        <button class="restart2">Play Again</button>
+      </div>
+</body>
+</html>
